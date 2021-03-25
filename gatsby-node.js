@@ -1,7 +1,18 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/node-apis/
- */
-
-// You can delete this file if you're not using it
+const fs = require("fs");
+const path = require("path");
+exports.createPages = ({ actions }) => {
+	const { createPage } = actions;
+	const template = require.resolve("./src/components/sing/index.tsx");
+	fs.readdirSync("./songs/")
+		.filter(s => s !== "song.json")
+		.forEach(song => {
+			const basename = path.basename(song, ".json");
+			createPage({
+				path: `/sing/${basename}`,
+				component: template,
+				context: {
+					name: basename,
+				},
+			});
+		});
+};

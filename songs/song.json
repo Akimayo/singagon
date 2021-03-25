@@ -1,0 +1,157 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://webapps.mciesla.cz/singagon/song.json",
+    "type": "object",
+    "title": "Song",
+    "description": "The song object",
+    "default": {},
+    "required": [
+        "name",
+        "available",
+        "artists",
+        "lyrics"
+    ],
+    "properties": {
+        "name": {
+            "$id": "#/properties/name",
+            "type": "string",
+            "title": "Song Name",
+            "description": "The name/title of the song",
+            "default": ""
+        },
+        "available": {
+            "$id": "#/properties/available",
+            "type": "array",
+            "title": "Available on",
+            "description": "Contains links to this song on different platforms",
+            "default": [],
+            "items": {
+                "$id": "#/properties/available/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/available/items/anyOf/0",
+                        "type": "object",
+                        "title": "Platform",
+                        "description": "A link to the song on a platform",
+                        "default": {},
+                        "required": [
+                            "on",
+                            "link"
+                        ],
+                        "properties": {
+                            "on": {
+                                "$id": "#/properties/available/items/anyOf/0/properties/on",
+                                "type": "string",
+                                "title": "Platform",
+                                "description": "The name of the platform",
+                                "default": ""
+                            },
+                            "link": {
+                                "$id": "#/properties/available/items/anyOf/0/properties/link",
+                                "type": "string",
+                                "title": "Link",
+                                "description": "URL of the song for this platform",
+                                "default": ""
+                            }
+                        },
+                        "additionalProperties": true
+                    }
+                ]
+            }
+        },
+        "artists": {
+            "$id": "#/properties/artists",
+            "type": "array",
+            "title": "Artists",
+            "description": "List of artists in this song",
+            "default": [],
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/artists/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/artists/items/anyOf/0",
+                        "type": "object",
+                        "title": "Artist",
+                        "description": "Details of an artist",
+                        "default": {},
+                        "required": [
+                            "name"
+                        ],
+                        "properties": {
+                            "name": {
+                                "$id": "#/properties/artists/items/anyOf/0/properties/name",
+                                "type": "string",
+                                "title": "Name",
+                                "description": "Artist's name or pseudonym",
+                                "default": ""
+                            },
+                            "voices": {
+                                "$id": "#/properties/artists/items/anyOf/0/properties/voices",
+                                "type": "array",
+                                "title": "Voices",
+                                "description": "Array of indices in lyrics subarrays to be associated with this artist",
+                                "default": [],
+                                "items": {
+                                    "$id": "#/properties/artists/items/anyOf/0/properties/voices/items"
+                                }
+                            },
+                            "link": {
+                                "$id": "#/properties/artists/items/anyOf/0/properties/link",
+                                "type": "string",
+                                "title": "Link",
+                                "description": "A link to the artist's social media profile or website",
+                                "default": ""
+                            },
+                            "photo": {
+                                "$id": "#/properties/artists/items/anyOf/1/properties/photo",
+                                "type": "string",
+                                "title": "Photo",
+                                "description": "Link to the artist's photo",
+                                "default": ""
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "lyrics": {
+            "$id": "#/properties/lyrics",
+            "type": "array",
+            "title": "Lyrics",
+            "description": "List of the song lines",
+            "default": [],
+            "items": {
+                "$id": "#/properties/lyrics/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/lyrics/items/anyOf/0",
+                        "type": "array",
+                        "title": "Lyric line",
+                        "description": "A line sung in the song",
+                        "default": [],
+                        "items": {
+                            "$id": "#/properties/lyrics/items/anyOf/0/items",
+                            "anyOf": [
+                                {
+                                    "$id": "#/properties/lyrics/items/anyOf/0/items/anyOf/0",
+                                    "type": "string",
+                                    "title": "Sung line",
+                                    "description": "The artists sings this line",
+                                    "default": ""
+                                },
+                                {
+                                    "$id": "#/properties/lyrics/items/anyOf/0/items/anyOf/1",
+                                    "type": "null",
+                                    "title": "Unsung line",
+                                    "description": "The artist is silent during this line",
+                                    "default": null
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}
