@@ -2,7 +2,7 @@ module.exports = {
 	siteMetadata: {
 		title: `Singagon: All The Voices`,
 		name: `Singagon`,
-		description: `I don't know about you, but I love when multiple singers collaborate on a song. But most lyrics sites and apps show all the lines without any indication of who sings which. This is where Singagon comes in.`,
+		description: `I don't know about you, but I love when multiple singers collaborate on a song. Unfortunately, most lyrics sites and apps show all the lines without any indication of who sings which. This is where Singagon comes in.`,
 		author: `@Akimayo`,
 	},
 	plugins: [

@@ -133,6 +133,7 @@ export default ({ data }) => {
 						const relPos = i - lineOffset - padTop;
 						let lineClass = "off-bottom";
 						let active = false;
+						const next = relPos === 1;
 						if (relPos === 4) lineClass = "ready-bottom";
 						else if (relPos === -3) lineClass = "ready-top";
 						else if (relPos < -3) lineClass = "off-top";
@@ -156,7 +157,9 @@ export default ({ data }) => {
 										key={i}
 										className={active ? "active" : ""}
 										style={{
-											textShadow: active && "0 0 64px #fff",
+											textShadow: `0 0 ${
+												active ? "64px" : next ? "8px" : 0
+											} #fff`,
 										}}
 									>
 										{l[0].main || <>&nbsp;</>}
@@ -165,7 +168,11 @@ export default ({ data }) => {
 												{mappable.map((s, k) => (
 													<span
 														key={`${i}--${k}`}
-														style={{ textShadow: active && "0 0 64px " + s.c }}
+														style={{
+															textShadow: `0 0 ${
+																active ? "32px" : next ? "4px" : 0
+															} ${s.c}`,
+														}}
 													>
 														{s.t}
 													</span>
@@ -183,7 +190,9 @@ export default ({ data }) => {
 											key={`${i}-${j}`}
 											className={active ? "active" : ""}
 											style={{
-												textShadow: active && "0 0 64px " + t.color,
+												textShadow: `0 0 ${
+													active ? "64px" : next ? "8px" : 0
+												} ${t.color}`,
 											}}
 										>
 											{t.main || <>&nbsp;</>}
@@ -193,7 +202,9 @@ export default ({ data }) => {
 														<span
 															key={`${i}-${j}-${k}`}
 															style={{
-																textShadow: active && "0 0 64px " + t.color,
+																textShadow: `0 0 ${
+																	active ? "32px" : next ? "4px" : 0
+																} ${t.color}`,
 															}}
 														>
 															{s}
@@ -309,7 +320,7 @@ export const query = graphql`
 					childImageSharp {
 						gatsbyImageData(
 							height: 180
-							placeholder: NONE
+							placeholder: BLURRED
 							formats: [WEBP, PNG]
 						)
 					}

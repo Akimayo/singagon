@@ -1,0 +1,90 @@
+{
+	"$schema": "./song.json",
+	"name": "Find You",
+	"available": [
+		{ "on": "YouTube", "link": "https://youtu.be/IgGjUjQRAxw" },
+		{
+			"on": "Spotify",
+			"link": "https://open.spotify.com/track/7mazffu6nlIv0rtRyPDMTD?si=xnDLsgcYS3WZVLa4RYJFEw"
+		}
+	],
+	"artists": [
+		{
+			"name": "Zedd",
+			"link": "https://www.youtube.com/channel/UCPNokRZ9hacjIQ3IQL6HNUQ"
+		},
+		{
+			"name": "Matthew Koma",
+			"link": "https://twitter.com/MatthewKoma",
+			"color": "#E18824",
+			"photo": "matthew-koma",
+			"voices": [0, 2]
+		},
+		{
+			"name": "Miriam Bryant",
+			"link": "https://twitter.com/MiriamBryant",
+			"color": "#7ED8E6",
+			"photo": "miriam-bryant",
+			"voices": [1, 3]
+		}
+	],
+	"lyrics": [
+		[null, null, null, null],
+		["Silent love is calling faith", null, null, null],
+		["To shatter me through your hallways", null, null, null],
+		["Into echoes you can feel", null, null, null],
+		["And rehearse the way you heal", null, null, null],
+		[null, "Make them dance", null, null],
+		[null, "Just like you", null, null],
+		[null, "'Cause you make me move", null, null],
+		[null, "Yeah you always make me go", null, null],
+		["I'll run away with your footsteps", null, null, null],
+		["I'll build a city that dreams for two", null, null, null],
+		["And if you lose yourself", null, null, null],
+		["I will find you", "I will find you", null, null],
+		["High on words we almost used", null, null, null],
+		["We're fireworks with a wet fuse", null, null, null],
+		["Flying planes with paper wheels", null, null, null],
+		["To the same Achilles heels", null, null, null],
+		["Make them dance", "Make them dance", null, null],
+		["Just like you", "Just like you", null, null],
+		["'Cause you make me move", "'Cause you make me move", null, null],
+		[null, "Yeah you always make me go", null, null],
+		["Ohhh", "Ohhh", null, null],
+		["I'll run away with your footsteps", null, null, null],
+		["I'll build a city that dreams for two", null, null, null],
+		["And if you lose yourself", null, null, null],
+		["I will find you", "I will find you", null, null],
+		[null, null, null, null],
+		[null, "Yeah, you always make me go, ohhh", null, null],
+		[null, null, null, null],
+		["Open up your skies", null, null, null],
+		["Turn up your night", "Turn up your night", null, null],
+		["To the speed of life", null, null, null],
+		["Turn up your night", "Turn up your night", null, null],
+		["Put your love in lights", null, null, null],
+		["Turn up your night", "Turn up your night", null, null],
+		["I will find you", "I will find you", null, null],
+		[null, "Make them dance", null, null],
+		[null, "Just like you", null, null],
+		[null, "'Cause you make me move", null, null],
+		[null, "Yeah you always make me go", null, null],
+		[null, "Yeah you always make me go", null, null],
+		["Ohhh", "Ohhh", null, null],
+		["I'll run away with your footsteps", null, null, null],
+		["I'll build a city that dreams for two", null, null, null],
+		["And if you lose yourself", null, null, null],
+		["I will find you", null, null, null],
+		[null, "Yeah, you always make me go", null, null],
+		[null, null, null, "go, go, go, go, go"],
+		["Turn up your night", "Turn up your night", null, "go, go, go, go, go, go, go, go"],
+		["Turn up your night", "Turn up your night", null, "go, go, go, go"],
+		["Turn it up", null, "...turn it up", "go, go, go, go, go"],
+		["Turn up your night", "Turn up your night", null, "go, go, go, go"],
+		["I will find you", "I will find you", "I will find you", "I will find you"],
+		[null, "Make them dance", null, null],
+		[null, "Just like you", null, null],
+		[null, "'Cause you make me move", null, null],
+		[null, "Yeah, you always make me go", null, null]
+	]
+}

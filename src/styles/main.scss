@@ -284,8 +284,8 @@ body {
 			.s-song__artist-name {
 				position: absolute;
 				bottom: -60px;
-				left: -50%;
-				width: 200%;
+				left: -25%;
+				width: 150%;
 				transition: bottom 120ms ease-out 60ms;
 				z-index: 3;
 				text-align: center;
@@ -302,8 +302,8 @@ body {
 			.s-song__artist-backlight {
 				z-index: 1;
 				position: absolute;
-				left: -200%;
-				right: -200%;
+				left: -100%;
+				right: -100%;
 				bottom: -60%;
 				height: 100%;
 				opacity: 0;
@@ -433,6 +433,9 @@ body {
 		box-shadow: 0 2px 4px #888;
 		border-radius: 4px;
 		overflow: hidden;
+		background-position: center center;
+		background-size: cover;
+		background-repeat: no-repeat;
 		& > * {
 			margin-bottom: unset;
 			height: 250px;
@@ -461,10 +464,11 @@ body {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-evenly;
-	align-items: center;
-	margin-top: 16px;
+	align-items: stretch;
+	margin: 16px 0;
+	row-gap: 24px;
 	.s-songcard {
-		flex: 0 1 480px;
+		flex: 0 1 30%;
 	}
 	&.s-songcard-list--in-song {
 		position: absolute;
@@ -477,6 +481,9 @@ body {
 			.active + & {
 				bottom: -20%;
 			}
+		}
+		.s-songcard {
+			flex-basis: 25%;
 		}
 	}
 }

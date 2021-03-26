@@ -1,0 +1,182 @@
+{
+	"$schema": "https://raw.githubusercontent.com/Akimayo/singagon/master/songs/song.json",
+	"name": "22",
+	"available": [
+		{
+			"on": "YouTube",
+			"link": "https://youtu.be/Wkecou9v_jk"
+		},
+		{
+			"on": "Spotify",
+			"link": "https://open.spotify.com/track/0N9Vo8vlxiP1Ii3rsz83z7?si=9ffbaWbhQ_arj6RlU7l1tg"
+		}
+	],
+	"artists": [
+		{
+			"name": "Kurt Hugo Schneider",
+			"link": "http://www.twitter.com/kurthschneider"
+		},
+		{
+			"name": "Chrissy Costanza",
+			"link": "http://youtube.com/Againstthecurrentny​",
+			"color": "#ffff00",
+			"photo": "atc-chrissy-costanza",
+			"voices": [1, 4]
+		},
+		{
+			"name": "Alex Goot",
+			"link": "http://youtube.com/Gootmusic​",
+			"color": "#0000ff",
+			"photo": "alex-goot",
+			"voices": [0]
+		},
+		{
+			"name": "Sam Tsui",
+			"link": "http://www.twitter.com/SamuelTsui",
+			"color": "#00ffff",
+			"photo": "samuel-tsui",
+			"voices": [2]
+		},
+		{
+			"name": "King The Kid",
+			"link": "http://youtube.com/KingTheKidLA​",
+			"color": "#ff0000",
+			"photo": "king-the-kid",
+			"voices": [3]
+		}
+	],
+	"lyrics": [
+		["It feels like a perfect night", null, null, null, null],
+		["To dress up like hipsters", null, null, null, null],
+		["And make fun of our exes, oh-oh, oh-oh", null, null, null, null],
+		["It feels like a perfect night", null, null, null, null],
+		["For breakfast at midnight", null, null, null, null],
+		["To fall in love with strangers, oh-oh, oh-oh", null, null, null, null],
+		[
+			"Yeah, we're happy, free, confused and lonely at the same time",
+			null,
+			null,
+			null,
+			null
+		],
+		["It's miserable and magical, oh yeah", null, null, null, null],
+		[
+			"Tonight, tonight, when we forget about the deadlines",
+			null,
+			null,
+			null,
+			null
+		],
+		["It's time, oh-oh", null, null, null, null],
+		["I don't know about you", null, null, null, null],
+		["But I'm feeling 22", null, null, null, null],
+		["Everything will be alright if", null, null, null, null],
+		["You keep me next to you", null, null, null, null],
+		[null, "You don't know about me", null, null, null],
+		[null, "But I bet you want to", null, null, null],
+		[null, "Everything will be alright if", null, null, null],
+		[
+			"We just keep dancing like we're",
+			"We just keep dancing like we're",
+			null,
+			null,
+			null
+		],
+		["22, yeah", "22", null, null, null],
+		["22, oh", "22, oh", null, null, null],
+		[null, null, "It seems like one of those nights", null, null],
+		[null, null, "This place is too crowded", null, null],
+		[null, null, "Too many cool kids, oh-oh", null, null],
+		[null, null, "It seems like one of those nights", null, null],
+		[null, null, "We ditch the whole scene", null, null],
+		[null, null, "And end up dreaming", null, null],
+		[null, null, "Instead of sleeping", null, null],
+		[
+			null,
+			null,
+			"Yeah, we're happy, free, confused and lonely in the best way",
+			null,
+			null
+		],
+		[null, null, "It's miserable and magical, oh yeah", null, null],
+		[
+			null,
+			null,
+			"Tonight, tonight, when we forget about the heartbreaks",
+			null,
+			null
+		],
+		[null, null, "It's time, oh-oh", null, null],
+		[null, "I don't know about you", null, null, null],
+		[null, "But I'm feeling 22", null, null, null],
+		[null, "Everything will be alright if", null, null, null],
+		[null, "You keep me next to you", null, null, null],
+		[null, null, "You don't know about me", null, null],
+		[null, null, "But I bet you want to", null, null],
+		[null, null, "Everything will be alright if", null, null],
+		[null, null, "We just keep dancing like we're", null, null],
+		["22, oh", "22, oh", "22, oh", null, null],
+		["22, oh", "22, oh", "22, oh", null, null],
+		[null, null, null, "It feels like one of those nights", null],
+		[null, null, null, "We ditch the whole scene", null],
+		[null, null, null, "It feels like one of those nights", null],
+		[null, null, null, "We won't be sleeping", null],
+		[null, null, null, "It feels like one of those nights", null],
+		[null, null, null, "You look like bad news", null],
+		[null, null, null, "I gotta have you", null],
+		[null, null, null, "I gotta have you", null],
+		[null, null, null, null, null],
+		["I don't know about you", null, null, null, null],
+		["But I'm feeling 22", null, null, null, null],
+		["Everything will be alright if", null, null, null, null],
+		["You keep me next to you", null, null, null, null],
+		["You don't know about me", null, "You don't know about me", null, null],
+		[null, null, "But I bet you want to", null, null],
+		[null, null, "Everything will be alright if", null, null],
+		[null, null, "We just keep dancing like we're", null, null],
+		["22, oh", "22, oh", "22, oh", "22, oh", "...22, oh"],
+		["22, oh", "22, oh", "22, oh", "22, oh", null],
+		[
+			"It feels like one of those nights",
+			"It feels like one of those nights",
+			"It feels like one of those nights",
+			"It feels like one of those nights",
+			null
+		],
+		["Oooh-oh", "Oooh-oh", "Oooh-oh", "Oooh-oh", null],
+		[
+			"It feels like one of those nights",
+			"It feels like one of those nights",
+			"It feels like one of those nights",
+			"It feels like one of those nights",
+			null
+		],
+		["Oooh-oh", "Oooh-oh", "Oooh-oh", "Oooh-oh", null],
+		[
+			"It feels like one of those nights",
+			"It feels like one of those nights",
+			"It feels like one of those nights",
+			"It feels like one of those nights",
+			null
+		],
+		[null, null, null, "We ditch the whole scene", null],
+		[
+			"It feels like one of those nights",
+			"It feels like one of those nights",
+			"It feels like one of those nights",
+			"It feels like one of those nights",
+			null
+		],
+		[null, null, "We won't be sleeping", null, null],
+		[
+			"It feels like one of those nights",
+			"It feels like one of those nights",
+			"It feels like one of those nights",
+			"It feels like one of those nights",
+			null
+		],
+		["You look like bad news", null, null, null, null],
+		["I gotta have you", "I gotta have you", null, null, null],
+		["I gotta have you", null, null, null, null]
+	]
+}

@@ -14,6 +14,10 @@ interface SongListProps {
 interface DataNodeType {
 	name: string;
 	childSongsJson: {
+		available: {
+			on: "YouTube"|"SoundCloud"|"Apple Music"|"Spotify"|string;
+			link: string;
+		}[];
 		artists: {
 			name: string;
 			photo?: string;
@@ -47,6 +51,10 @@ const SongList: React.FC<SongListProps> = ({
 					node {
 						name
 						childSongsJson {
+							available {
+								on
+								link
+							}
 							artists {
 								name
 								photo
@@ -112,18 +120,22 @@ const SongList: React.FC<SongListProps> = ({
 				}
 			>
 				{query.length ? (
-					query.map((e, i) => (
-						<SongCard
-							key={i}
-							path={e.node.name}
-							artists={e.node.childSongsJson.artists
-								.map(a => a.name)
-								.join(", ")}
-							photos={e.node.childSongsJson.artists.map(a => a.photo)}
-							name={e.node.childSongsJson.name}
-							inSong={inSong}
-						/>
-					))
+					query.map((e, i) => {
+						const ytfilter = e.node.childSongsJson.available.filter(v => v.on === "YouTube");
+						return (
+							<SongCard
+								key={i}
+								path={e.node.name}
+								artists={e.node.childSongsJson.artists
+									.map(a => a.name)
+									.join(", ")}
+								photos={e.node.childSongsJson.artists.map(a => a.photo)}
+								name={e.node.childSongsJson.name}
+								inSong={inSong}
+								youtubeLink={ytfilter.length && ytfilter[0].link}
+							/>
+						);
+					})
 				) : (
 					<p>{t("songs.not-found")}</p>
 				)}

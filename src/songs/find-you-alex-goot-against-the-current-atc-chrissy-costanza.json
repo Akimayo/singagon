@@ -1,0 +1,76 @@
+{
+	"$schema": "./song.json",
+	"name": "Find You",
+	"available": [
+		{ "on": "YouTube", "link": "https://youtu.be/1K1zDEruE-c" },
+		{
+			"on": "Spotify",
+			"link": "https://open.spotify.com/track/1kxE4VBYLZmSWlKcTTfH8N?si=w4yT7Ag5Rha_SW2jQtVx3g"
+		}
+	],
+	"artists": [
+		{
+			"name": "Alex Goot",
+			"link": "http://youtube.com/Gootmusic​",
+			"color": "#00ffff",
+			"photo": "alex-goot",
+			"voices": [0]
+		},
+		{
+			"name": "Against The Current",
+			"link": "http://youtube.com/Againstthecurrentny​",
+			"color": "#ff00ff",
+			"photo": "atc-chrissy-costanza",
+			"voices": [1, 2]
+		}
+	],
+	"lyrics": [
+		["Silent love is calling faith", null, null],
+		["To shatter me through your hallways", null, null],
+		["Into echoes you can feel", null, null],
+		["And rehearse the way you heal", null, null],
+		[null, "Make them dance", null],
+		[null, "Just like you", null],
+		[null, "'Cause you make me move", null],
+		[null, "Yeah you always make me go", null],
+		["I'll run away with your footsteps", "...footsteps", null],
+		["I'll build a city that dreams for two", "...dreams for two", null],
+		[null, "And if you lose yourself", null],
+		[null, "I will find you", null],
+		["High on words we almost used", null, null],
+		["We're fireworks with a wet fuse", null, null],
+		["Flying planes with paper wheels", null, null],
+		["To the same Achilles heels", null, null],
+		[null, "Make them dance", null],
+		[null, "Just like you", null],
+		[null, "'Cause you make me move", null],
+		[null, "Yeah you always make me go", null],
+		[null, "Ohhh", null],
+		[null, "I'll run away with your footsteps", null],
+		["I'll build a city that dreams for two", "...dreams for two", null],
+		[null, "And if you lose yourself", null],
+		[null, "I will find you", null],
+		[null, null, null],
+		["Open up your skies", null, null],
+		[null, "Turn up your night", "Turn off your night"],
+		["To the speed of life", null, null],
+		[null, "Turn up your night", "Turn off your night"],
+		["Put your love in lights", null, null],
+		[null, "Turn up your night", "Turn off your night"],
+		[null, "I will find you", null],
+		[null, "Make them dance", null],
+		[null, "Just like you", null],
+		[null, "'Cause you make me move", null],
+		[null, "Yeah you always make me go", null],
+		[null, "Yeah you always make me go", null],
+		[null, "Ohhh", null],
+		["I'll run away with your footsteps", "...footsteps", null],
+		["I'll build a city that dreams for two", "...dreams for two", null],
+		[null, "And if you lose yourself", null],
+		[null, "I will find you", null],
+		["I'll run away with your footsteps", null, null],
+		[null, "I'll build a city that dreams for two", null],
+		["And if you lose yourself", "And if you lose yourself", null],
+		["I will find you", "I will find you", null]
+	]
+}

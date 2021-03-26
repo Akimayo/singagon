@@ -120,6 +120,7 @@
 			"title": "Lyrics",
 			"description": "List of the song lines",
 			"default": [],
+			"minItems": 1,
 			"items": {
 				"$id": "#/properties/lyrics/items",
 				"anyOf": [
