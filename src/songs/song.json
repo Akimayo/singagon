@@ -97,8 +97,9 @@
 								"$id": "#/properties/artists/items/anyOf/1/properties/photo",
 								"type": "string",
 								"title": "Photo",
-								"description": "Link to the artist's photo",
-								"default": ""
+								"description": "File name (without extension) of the artist's photo in the /src/images/artists directory. This photo should be a partrait picture stripped of background and must be in PNG file format.",
+								"default": "",
+								"pattern": "^[^\/:\\]+$"
 							},
 							"color": {
 								"$id": "#/properties/artists/items/anyOf/1/properties/photo",
@@ -106,7 +107,7 @@
 								"title": "Color",
 								"description": "Accent color for this artist",
 								"default": "#ffffff",
-								"pattern": "/#[0-9a-zA-Z]{6}/"
+								"pattern": "#[0-9a-fA-F]{6}"
 							}
 						}
 					}

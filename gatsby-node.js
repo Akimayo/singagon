@@ -3,7 +3,7 @@ const path = require("path");
 exports.createPages = ({ actions }) => {
 	const { createPage } = actions;
 	const template = require.resolve("./src/components/sing/index.tsx");
-	fs.readdirSync("./songs/")
+	fs.readdirSync("./src/songs/")
 		.filter(s => s !== "song.json")
 		.forEach(song => {
 			const basename = path.basename(song, ".json");

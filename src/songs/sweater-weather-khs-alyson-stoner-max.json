@@ -1,0 +1,124 @@
+{
+	"$schema": "https://raw.githubusercontent.com/Akimayo/singagon/master/songs/song.json",
+	"name": "Sweater Weather",
+	"available": [
+		{
+			"on": "YouTube",
+			"link": "https://youtu.be/0TSxB_Tb2F0"
+		},
+		{
+			"on": "Spotify",
+			"link": "https://open.spotify.com/track/0kn9QwZW8Ow9eTuZgxVEz8?si=mepvPKY1RRSTSh8fs3E1ZQ"
+		}
+	],
+	"artists": [
+		{
+			"name": "Kurt Hugo Schneider",
+			"link": "http://www.twitter.com/kurthschneider"
+		},
+		{
+			"name": "Alyson Stoner",
+			"link": "http://www.twitter.com/AlysonOnTour",
+			"photo": "alyson-stoner",
+			"voices": [0],
+			"color": "#008822"
+		},
+		{
+			"name": "MAX",
+			"link": "https://www.youtube.com/channel/UCQIRM93QxhQ4pGm0cxuCXDw",
+			"photo": "max-schneider",
+			"voices": [1],
+			"color": "#bf6000"
+		}
+	],
+	"lyrics": [
+		[null, "'Cause it's too cold"],
+		[null, "For you here"],
+		[null, "And now"],
+		["So let me hold", null],
+		["Both your hands in", null],
+		["The holes of my sweater", null],
+		[null, null],
+		[null, "All I am is a man"],
+		[null, "I want the world in my hands"],
+		[null, "I hate the beach but I stand"],
+		[null, "In California with my toes in the sand"],
+		["Use the sleeves of my sweater", null],
+		["Let's have an adventure", null],
+		["Head in the clouds but my gravity centered", null],
+		[
+			"Touch my neck and I'll touch yours",
+			"Touch my neck and I'll touch yours"
+		],
+		["Me in my little high-waisted shorts, oh", null],
+		["You know what I think about", "You know what I think about"],
+		["And what I think about", "And what I think about"],
+		["One love, two mouths", "One love, two mouths"],
+		["One love, one house", "One love, one house"],
+		["No shirt, no blouse", "No shirt, no blouse"],
+		["Just us, you find out", "Just us, you find out"],
+		[
+			"Nothing that I wouldn't wanna tell you about, no",
+			"Nothing that I wouldn't wanna tell you about, no"
+		],
+		["...cold", "'Cause it's too cold"],
+		["For you here", "For you here"],
+		["And now", "And now"],
+		["So let me hold", "So let me hold"],
+		["Both your hands in", "Both your hands in"],
+		[null, "The holes of my sweater"],
+		["And if I may just take your breath away", null],
+		["I don't mind if there's not much to say", null],
+		["Sometimes the silence guides our minds", null],
+		["So move to a place so far away, yeah", null],
+		[null, "The goosebumps start to raise"],
+		[null, "The minute that my left hand meets your waist"],
+		[null, "And then I watch your face"],
+		[null, "Put my finger on your tongue"],
+		[null, "'Cause you love the taste, yeah"],
+		["These hearts adore", null],
+		["Everyone the other beats hardest for", null],
+		["Inside this place is warm", null],
+		["Outside it starts to pour", null],
+		["Coming down", "Coming down"],
+		["One love, two mouths", "One love, two mouths"],
+		["One love, one house", "One love, one house"],
+		["No shirt, no blouse", "No shirt, no blouse"],
+		["Just us, you find out", "Just us, you find out"],
+		[
+			"Nothing that I wouldn't wanna tell you about",
+			"Nothing that I wouldn't wanna tell you about"
+		],
+		[null, "No"],
+		["No", null],
+		[null, "No"],
+		["...cold", "'Cause it's too cold"],
+		["For you here", "For you here"],
+		["And now", "And now"],
+		["So let me hold", "So let me hold"],
+		["Both your hands in", "Both your hands in"],
+		[null, "The holes of my sweater"],
+		["'Cause it's too cold", null],
+		["For you here", "For you here"],
+		["And now", "And now"],
+		["So let me hold", "So let me hold"],
+		["Both your hands in", "Both your hands in"],
+		["The holes of my sweater", "The holes of my sweater"],
+		[null, "Oh, o-oh"],
+		["Oh, o-oh",null],
+		["Oh, o-oh", "Oh, o-oh, the holes of my sweater"],
+		["Oh, o-oh, the holes of my sweater", "Oh, o-oh"],
+		["'Cause it's too cold", "'Cause it's too cold"],
+		["For you here", "For you here"],
+		["And now", "And now"],
+		["So let me hold", "So let me hold"],
+		["Both your hands in", "Both your hands in"],
+		[null, "The holes of my sweater"],
+		["'Cause it's too cold", "...cold"],
+		["For you here", "For you here"],
+		["And now", "And now"],
+		["So let me hold", "So let me hold"],
+		["Both your hands in", "Both your hands in"],
+		["The holes of my sweater", "The holes of my sweater"]
+	]
+}

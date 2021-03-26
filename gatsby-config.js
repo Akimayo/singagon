@@ -50,15 +50,25 @@ module.exports = {
 					},
 					keySeparator: false,
 					nsSeparator: false,
+					debug: true
 				},
 			},
 		},
+		{
+			resolve: `gatsby-plugin-react-svg`,
+			options: {
+				rule: {
+					include: /.+\.svg$/
+				}
+			}
+		},
+		`gatsby-plugin-fontawesome-css`,
 		`gatsby-transformer-json`,
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
-				path: `${__dirname}/songs`,
-				ignore: [`${__dirname}/songs/song.json`],
+				path: `${__dirname}/src/songs`,
+				ignore: [`${__dirname}/src/songs/song.json`],
 			},
 		},
 		// this (optional) plugin enables Progressive Web App + Offline functionality
