@@ -424,9 +424,11 @@ body {
 			}
 			.s-song__artist-name {
 				position: absolute;
-				bottom: -60px;
+				bottom: -54px;
 				left: -25%;
 				width: 150%;
+				height: 24px;
+				padding-top: 4px;
 				transition: bottom 120ms ease-out 60ms;
 				z-index: 3;
 				text-align: center;
@@ -440,8 +442,8 @@ body {
 					#050505 80%,
 					transparent
 				);
-				border-top-left-radius: 100%;
-				border-top-right-radius: 100%;
+				border-top-left-radius: 30px;
+				border-top-right-radius: 30px;
 			}
 			&:hover .s-song__artist-name {
 				bottom: 0;
