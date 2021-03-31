@@ -1,0 +1,120 @@
+{
+	"$schema": "./song.json",
+	"name": "Catch My Breath",
+	"available": [
+		{
+			"on": "YouTube",
+			"link": "https://youtu.be/cnGMG798SCI"
+		},
+		{
+			"on": "Spotify",
+			"link": "https://open.spotify.com/track/65DkSJpZsPwADtd4ksSRxR?si=lDjLOD7zRuSTfrZ89iY-9A"
+		}
+	],
+	"artists": [
+		{
+			"name": "Alex Goot",
+			"link": "http://youtube.com/Gootmusic​",
+			"color": "#CF714A",
+			"photo": "alex-goot",
+			"voices": [1]
+		},
+		{
+			"name": "Against The Current",
+			"link": "http://youtube.com/Againstthecurrentny​",
+			"color": "#CC0000",
+			"photo": "atc-chrissy-costanza",
+			"voices": [0]
+		}
+	],
+	"lyrics": [
+		[null, "I don't wanna be left behind"],
+		[null, "Distance was a friend of mine"],
+		[null, "Catching breath in the web of lies"],
+		[null, "I've spent most of my life"],
+		[null, "Riding waves, playing acrobat"],
+		[null, "Shadow-boxing the other half"],
+		[null, "Learning how to react"],
+		[null, "I've spent most of my time"],
+		["Catching my breath", "Catching my breath"],
+		["Letting it go", null],
+		["Turning my cheek for the sake of the show", null],
+		["Now that you know", "Now that you know"],
+		["This is my life", null],
+		["And I won't be told what's supposed to be right", null],
+		[
+			"Ca-ca-ca-ca-ca-ca-ca-catch my breath",
+			"Ca-ca-ca-ca-ca-ca-ca-catch my breath"
+		],
+		["No one can hold me back", null],
+		["I ain't got time for that", "I ain't got time for that"],
+		[
+			"Ca-ca-ca-ca-ca-ca-ca-catch my breath",
+			"Ca-ca-ca-ca-ca-ca-ca-catch my breath"
+		],
+		["Won't let them get me down", null],
+		["It's all so simple now", "It's all so simple now"],
+		[null, "Addicted to the love I found"],
+		[null, "Heavy heart now a weightless cloud"],
+		[null, "Making time for the ones that count"],
+		[null, "I'll spend the rest of my time"],
+		[null, "Laughing hard with the windows down"],
+		[null, "Leaving footprints all over town"],
+		[null, "Keeping faith, karma comes around"],
+		[null, "And I'll spend the rest of my life"],
+		["Catching my breath", "Catching my breath"],
+		["Letting it go", null],
+		["Turning my cheek for the sake of the show", null],
+		["Now that you know", "Now that you know"],
+		["This is my life", null],
+		["And I won't be told what's supposed to be right", null],
+		[
+			"Ca-ca-ca-ca-ca-ca-ca-catch my breath",
+			"Ca-ca-ca-ca-ca-ca-ca-catch my breath"
+		],
+		["No one can hold me back", null],
+		["I ain't got time for that", "I ain't got time for that"],
+		[
+			"Ca-ca-ca-ca-ca-ca-ca-catch my breath",
+			"Ca-ca-ca-ca-ca-ca-ca-catch my breath"
+		],
+		["Won't let them get me down", null],
+		["It's all so simple now", "It's all so simple now"],
+		[null, "Catching my breath"],
+		[null, "Letting it go"],
+		[null, "Turning my cheek for the sake of the show"],
+		["Now that you know", "Now that you know"],
+		["This is my life", "This is my life"],
+		["And I won't be told", "And I won't be told what's supposed to be right"],
+		["Catching my breath", "Catching my breath"],
+		["Letting it go", null],
+		["Turning my cheek for the sake of the show", null],
+		["Now that you know", "Now that you know"],
+		["This is my life", null],
+		["And I won't be told what's supposed to be right", null],
+		[
+			"Ca-ca-ca-ca-ca-ca-ca-catch my breath",
+			"Ca-ca-ca-ca-ca-ca-ca-catch my breath"
+		],
+		["No one can hold me back", null],
+		["I ain't got time for that", "I ain't got time for that"],
+		[
+			"Ca-ca-ca-ca-ca-ca-ca-catch my breath",
+			"Ca-ca-ca-ca-ca-ca-ca-catch my breath"
+		],
+		["Won't let them get me down", null],
+		["It's all so simple now", "It's all so simple now"],
+		[
+			"Ca-ca-ca-ca-ca-ca-ca-catch my breath",
+			"Ca-ca-ca-ca-ca-ca-ca-catch my breath"
+		],
+		["No one can hold me back", null],
+		["I ain't got time for that", "I ain't got time for that"],
+		[
+			"Ca-ca-ca-ca-ca-ca-ca-catch my breath",
+			"Ca-ca-ca-ca-ca-ca-ca-catch my breath"
+		],
+		["Won't let them get me down", null],
+		["It's all so simple now", "It's all so simple now"]
+	]
+}
