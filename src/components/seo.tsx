@@ -8,6 +8,7 @@
 import * as React from "react";
 import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
+import { useTranslation } from "react-i18next";
 interface SEOProps {
 	description?: string;
 	lang?: string;
@@ -20,13 +21,13 @@ const SEO: React.FC<SEOProps> = ({
 	meta = [],
 	title,
 }) => {
+	const { t } = useTranslation();
 	const { site } = useStaticQuery(
 		graphql`
 			query {
 				site {
 					siteMetadata {
-						title
-						description
+						name
 						author
 					}
 				}
@@ -34,8 +35,8 @@ const SEO: React.FC<SEOProps> = ({
 		`
 	);
 
-	const metaDescription = description || site.siteMetadata.description;
-	const defaultTitle = site.siteMetadata?.title;
+	const metaDescription = description || t("app-description");
+	const defaultTitle = site.siteMetadata?.name;
 
 	return (
 		<Helmet

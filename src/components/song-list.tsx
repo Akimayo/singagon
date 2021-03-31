@@ -15,7 +15,7 @@ interface DataNodeType {
 	name: string;
 	childSongsJson: {
 		available: {
-			on: "YouTube"|"SoundCloud"|"Apple Music"|"Spotify"|string;
+			on: "YouTube" | "SoundCloud" | "Apple Music" | "Spotify" | string;
 			link: string;
 		}[];
 		artists: {
@@ -115,13 +115,15 @@ const SongList: React.FC<SongListProps> = ({
 			<div
 				className={
 					"s-songcard-list " +
-					(inSong ? "s-songcard-list--in-song " : "") +
-					className
+						(inSong ? "s-songcard-list--in-song " : "") +
+						(className || "")
 				}
 			>
 				{query.length ? (
 					query.map((e, i) => {
-						const ytfilter = e.node.childSongsJson.available.filter(v => v.on === "YouTube");
+						const ytfilter = e.node.childSongsJson.available.filter(
+							v => v.on === "YouTube"
+						);
 						return (
 							<SongCard
 								key={i}

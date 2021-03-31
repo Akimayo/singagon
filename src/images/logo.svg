@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet" viewBox="22.116645944972348 -5.021662193187382 485.447769001935 485.2565264938132" width="430.88" height="430.26" class="logo" aria-labelledby="pgname">
+	<defs>
+		<path d="M451.86 307.55L452.24 140.93L334.69 22.85L168.07 22.48L49.99 140.03L49.62 306.64L167.17 424.73L333.78 425.1L451.86 307.55Z" id="b3Wi4bZCtz">
+		</path>
+		<path d="M322.49 397.37L345.91 452.73L480.06 318.58L423.28 294.45L322.49 397.37Z" id="a2MWFIJ600">
+		</path>
+		<path d="M424.63 79.91C424.63 102.73 424.63 285.28 424.63 308.1C415.49 305.88 406.11 304.73 396.7 304.68C350.44 304.68 312.9 329.69 312.9 360.54C312.9 391.39 350.44 416.41 396.7 416.41C442.97 416.41 480.5 391.39 480.5 360.54C480.5 340.14 480.5 273.24 480.5 251.41C480.5 189.77 460.94 129.72 424.63 79.91C424.63 79.91 424.63 79.91 424.63 79.91Z" id="a5BSKPZMXx">
+		</path>
+	</defs>
+	<g>
+		<g>
+			<use xlink:href="#b3Wi4bZCtz" fill="#f30a49">
+			</use>
+			<g>
+				<use xlink:href="#b3Wi4bZCtz" opacity="1" fill-opacity="0" stroke="currentColor" stroke-width="55" stroke-opacity="1">
+				</use>
+			</g>
+		</g>
+		<g>
+			<use xlink:href="#a2MWFIJ600" fill="#f30a49">
+			</use>
+		</g>
+		<g>
+			<use xlink:href="#a5BSKPZMXx" fill="currentColor">
+			</use>
+		</g>
+	</g>
+</svg>

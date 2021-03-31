@@ -22,7 +22,7 @@ const SongCard: React.FC<SongCardProps> = ({
 	const photoFiles = useStaticQuery(graphql`
 		query {
 			allFile(
-				filter: { ext: { eq: ".png" }, dir: { glob: "**/images/artists" } }
+				filter: { ext: { in: [ ".png", ".webp" ] }, dir: { glob: "**/artists" } }
 			) {
 				edges {
 					node {
@@ -45,10 +45,10 @@ const SongCard: React.FC<SongCardProps> = ({
 	);
 	const ytimg =
 		youtubeLink &&
-		`url('https://i.ytimg.com/vi_webp/${youtubeLink
+		`url('https://i.ytimg.com/vi/${youtubeLink
 			.match(/(\?v=([\w\d_\-]+)|\.be\/([\w\d_\-]+))/)
 			.slice(2)
-			.reduce((all, p) => all + (p || ""), "")}/0.webp')`;
+			.reduce((all, p) => all + (p || ""), "")}/0.jpg')`;
 	return (
 		<Link
 			to={`/sing/${path}`}
@@ -56,7 +56,7 @@ const SongCard: React.FC<SongCardProps> = ({
 		>
 			<div
 				className="s-songcard__images"
-				style={youtubeLink && { backgroundImage: ytimg }}
+				style={youtubeLink ? { backgroundImage: ytimg } : {}}
 			>
 				{photos.map(
 					(p, i) =>

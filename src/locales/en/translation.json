@@ -1,10 +1,28 @@
 {
-    "sing": "Sing",
-    "about": "About",
-    "songs": {
-        "all": "Songs",
-        "selected": "Selected songs",
-        "search": "Search...",
-        "not-found": "No available songs match the search terms"
-    }
+	"app-sub-title": "{{appName}}: All The Voices",
+    "app-description": "I don't know about you, but I love when multiple singers collaborate on a song. Unfortunately, most lyrics sites and apps show all the lines without any indication of who sings which. This is where Singagon comes in.",
+    "app-by": "Made with {{note}} by",
+    "app-built-with": "Built with",
+	"nav": {
+		"sing": "Sing",
+		"about": "About",
+        "contribute": "Contribute",
+        "locales": "Change language"
+	},
+	"pages": {
+		"index": {},
+		"sing": {},
+		"about": {},
+		"404": {}
+	},
+	"songs": {
+		"all": "Songs",
+		"selected": "Selected songs",
+		"search": "Search...",
+		"not-found": "No available songs match the search terms"
+	},
+	"sing": {
+		"end": "End",
+		"reset": "Reset"
+	}
 }

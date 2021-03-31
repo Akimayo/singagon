@@ -34,7 +34,8 @@ body {
 	align-items: center;
 	column-gap: 32px;
 	z-index: 4;
-	& + * {
+	box-shadow: 0 0 8px #050505A0;
+	& ~ main {
 		margin-top: 72px;
 	}
 	a {
@@ -42,15 +43,21 @@ body {
 		text-decoration: none;
 	}
 	.s-header__title {
-		overflow: hidden;
-		h1 {
+		svg.logo {
+			height: 49px;
+			width: auto;
+			padding: 4px 8px 0 0;
+			margin-bottom: -9px;
+		}
+		span {
 			font-size: 40px;
 			display: inline;
+			font-family: "Righteous", cursive;
 		}
 	}
 	.s-header__links {
 		cursor: default;
-		a {
+		& > * {
 			border-radius: 4px;
 			transition: box-shadow 120ms ease-out, letter-spacing 120ms ease-out 60ms;
 			box-shadow: 0 0 0 $white;
@@ -60,11 +67,27 @@ body {
 				margin: 0 8px;
 				padding: 4px 8px;
 				display: inline-block;
-				width: 80px;
+				width: 120px;
 				&:hover,
 				&:focus {
 					box-shadow: 0 0 4px $white;
 					letter-spacing: 1px;
+				}
+				&.s-header__control {
+					width: auto;
+					cursor: pointer;
+				}
+				&.s-header__hamburger {
+					display: none;
+					@media (max-width: 999px) {
+						display: block;
+						position: absolute;
+						right: 24px;
+						top: 4px;
+						@media (max-width: 480px) {
+							top: 8px;
+						}
+					}
 				}
 			}
 			&.s-header__artist-link {
@@ -104,7 +127,7 @@ body {
 				height: 24px;
 				overflow-y: hidden;
 				position: relative;
-				h1 {
+				span {
 					font-size: 24px;
 					&:first-child {
 						margin-top: -2px;
@@ -115,17 +138,112 @@ body {
 		}
 		&:hover .s-header__title,
 		&:focus-within .s-header__title {
-			a h1:first-child {
+			a span:first-child {
 				margin-top: -30px;
+			}
+		}
+	}
+	@media (max-width: 999px) {
+		flex-flow: column nowrap;
+		align-items: flex-start;
+		justify-content: space-between;
+		overflow-y: hidden;
+		height: 44px;
+		transition: height ease-out 120ms;
+		&.active {
+			height: 180px;
+		}
+		.s-header__title {
+			svg.logo {
+				height: 28px;
+				margin-bottom: -4px;
+			}
+			span {
+				font-size: 28px;
+			}
+		}
+		.s-header__links {
+			display: flex;
+			flex-flow: column wrap;
+			justify-content: space-evenly;
+			align-items: center;
+			max-height: calc(100% - 48px);
+			row-gap: 16px;
+			width: 100%;
+			overflow: hidden;
+		}
+	}
+}
+.s-lang {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	visibility: collapse;
+	align-items: center;
+	justify-content: center;
+	background-color: fade-out(black, 0.3);
+	z-index: 6;
+	transition: opacity 120ms ease-out, visibility 0ms linear 120ms;
+	opacity: 0;
+	& ~ * {
+		filter: blur(0);
+		transition: filter 120ms ease-out;
+	}
+	&.active {
+		transition: opacity 120ms ease-out, visibility 0ms linear 0ms;
+		visibility: visible;
+		opacity: 1;
+		& ~ * {
+			filter: blur(2px);
+		}
+	}
+	[role="dialog"] {
+		padding: 32px;
+		border-radius: 4px;
+		background-color: $teal;
+		box-shadow: 0 0 16px $teal;
+		color: $white;
+		.s-lang__list {
+			display: flex;
+			flex-flow: column nowrap;
+			align-items: center;
+			justify-content: space-evenly;
+			row-gap: 8px;
+			width: 100%;
+			margin-top: 16px;
+			a {
+				border-radius: 4px;
+				transition: box-shadow 120ms ease-out,
+					letter-spacing 120ms ease-out 60ms;
+				box-shadow: 0 0 0 $white;
+				letter-spacing: 0px;
+				text-align: center;
+				margin: 0 8px;
+				padding: 4px 16px;
+				display: inline-block;
+				color: $white;
+				text-decoration: none;
+				&:hover,
+				&:focus {
+					box-shadow: 0 0 4px $white;
+					letter-spacing: 1px;
+				}
+				svg {
+					margin-right: 16px;
+				}
 			}
 		}
 	}
 }
 .s-body {
-	width: 1280px;
+	max-width: 1280px;
 	margin-left: auto;
 	margin-right: auto;
 	min-height: calc(100vh - 72px - 32px);
+	padding: 0 24px;
 }
 .s-footer {
 	background-color: fade-out($teal, 0.3);
@@ -136,16 +254,33 @@ body {
 	flex-flow: row wrap;
 	justify-content: space-evenly;
 	align-items: center;
+	a {
+		color: $white;
+		text-decoration: none;
+		text-shadow: 0 0 4px $blue;
+		transition: text-shadow ease-out 120ms;
+		&:hover,
+		&:focus {
+			text-shadow: 0 0 4px $red;
+		}
+	}
+	@media (max-width: 600px) {
+		& > *:not(:first-child) {
+			display: none;
+		}
+	}
 }
 .s-song {
 	overflow: hidden;
 	height: calc(100vh - 34.1px);
 	position: relative;
+	background-color: #050505;
 	canvas {
 		min-height: 100%;
 		min-width: 100vw;
-		z-index: 0;
 		position: absolute;
+		top: 0;
+		z-index: -1;
 	}
 	.s-song__lyrics {
 		position: relative;
@@ -173,11 +308,13 @@ body {
 			justify-content: space-evenly;
 			column-gap: 32px;
 			row-gap: 32px;
-			transition-property: max-height, margin, flex, font-size, font-weight;
+			transition-property: max-height, margin, flex;
 			transition-timing-function: ease-in-out;
 			transition-duration: 360ms;
 			span {
-				transition: text-shadow 360ms ease-in-out;
+				transition-property: font-size, font-weight, text-shadow;
+				transition-timing-function: inherit;
+				transition-duration: inherit;
 				small {
 					display: flex;
 					flex-flow: row wrap;
@@ -187,6 +324,9 @@ body {
 					font-size: 24px;
 					column-gap: 16px;
 					row-gap: 16px;
+					transition-property: margin-top, text-shadow, font-size;
+					transition-timing-function: inherit;
+					transition-duration: inherit;
 				}
 			}
 			&.active {
@@ -199,18 +339,19 @@ body {
 				}
 			}
 			&.ready-top,
-			&.off-top {
-				max-height: 0;
-				margin: -10vh 0 0 0;
-				flex: 0 0 0;
+			&.ready-bottom,
+			&.off-top,
+			&.off-bottom {
+				flex: 0 0 0px;
 				overflow: hidden;
+			}
+			&.ready-top,
+			&.off-top {
+				margin: -10vh 0 0 0;
 			}
 			&.ready-bottom,
 			&.off-bottom {
-				max-height: 0;
 				margin: 0 0 -10vh 0;
-				flex: 0 0 0;
-				overflow: hidden;
 			}
 			&.off-top,
 			&.off-bottom {
@@ -224,6 +365,7 @@ body {
 			}
 			&:nth-last-child(2) {
 				opacity: 0.2;
+				text-transform: uppercase;
 				span {
 					font-family: "Righteous", cursive;
 					letter-spacing: 8px;
@@ -263,11 +405,13 @@ body {
 		right: 0;
 		height: 180px;
 		user-select: none;
+		pointer-events: none;
 		.s-song__artist {
 			margin: unset;
 			height: 100%;
 			position: relative;
 			z-index: 4;
+			pointer-events: all;
 			.s-song__artist-image {
 				filter: grayscale(1);
 				height: 100%;
@@ -292,7 +436,13 @@ body {
 				cursor: default;
 				font-weight: bold;
 				color: $white;
-				background-color: #050505;
+				background-image: linear-gradient(
+					to right,
+					transparent,
+					#050505 20%,
+					#050505 80%,
+					transparent
+				);
 				border-top-left-radius: 100%;
 				border-top-right-radius: 100%;
 			}
@@ -434,7 +584,7 @@ body {
 		border-radius: 4px;
 		overflow: hidden;
 		background-position: center center;
-		background-size: cover;
+		background-size: auto 140%;
 		background-repeat: no-repeat;
 		& > * {
 			margin-bottom: unset;
@@ -467,8 +617,15 @@ body {
 	align-items: stretch;
 	margin: 16px 0;
 	row-gap: 24px;
+	column-gap: 24px;
 	.s-songcard {
-		flex: 0 1 30%;
+		flex: 0 1 calc(100% / 3 - 16px);
+		@media (max-width: 1000px) {
+			flex-basis: calc(50% - 24px);
+		}
+		@media (max-width: 526px) {
+			flex-basis: 100%;
+		}
 	}
 	&.s-songcard-list--in-song {
 		position: absolute;
@@ -495,6 +652,12 @@ body {
 		border: none;
 		border-bottom: 1px solid $red;
 		background: none;
-		padding: 4px 12px;
+		padding: 4px 12px 0;
+		outline: none;
+		box-shadow: 0 0 0 $red;
+		transition: box-shadow 120ms ease-out;
+		&:focus {
+			box-shadow: 0 0 2px $red;
+		}
 	}
 }

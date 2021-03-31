@@ -3,7 +3,7 @@ module.exports = {
 		title: `Singagon: All The Voices`,
 		name: `Singagon`,
 		description: `I don't know about you, but I love when multiple singers collaborate on a song. Unfortunately, most lyrics sites and apps show all the lines without any indication of who sings which. This is where Singagon comes in.`,
-		author: `@Akimayo`,
+		author: `Michal Ciesla`,
 	},
 	plugins: [
 		`gatsby-plugin-sass`,
@@ -16,6 +16,13 @@ module.exports = {
 				path: `${__dirname}/src/images`,
 			},
 		},
+		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				name: `artists`,
+				path: `${__dirname}/artists`,
+			},
+		},
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
 		{
@@ -24,10 +31,10 @@ module.exports = {
 				name: `Singagon: All The Voices`,
 				short_name: `Singagon`,
 				start_url: `/`,
-				background_color: `#04879c`,
-				theme_color: `#f30a49`,
+				background_color: `#f30a49`,
+				theme_color: `#ffffff`,
 				display: `minimal-ui`,
-				icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+				icon: `src/images/logo.svg`, // This path is relative to the root of the site.
 			},
 		},
 		{
@@ -41,16 +48,17 @@ module.exports = {
 			resolve: `gatsby-plugin-react-i18next`,
 			options: {
 				localeJsonSourceName: `locale`, // name given to `gatsby-source-filesystem` plugin.
-				languages: [`en`],
+				languages: [`en`, `cs`],
 				defaultLanguage: `en`,
 				siteUrl: `https://webapps.mciesla.cz/singagon/`,
 				i18nextOptions: {
+					debug: true,
+					lowerCaseLng: true,
+					saveMissing: false,
 					interpolation: {
-						escapeValue: false,
+						escapeValue: false, // not needed for react as it escapes by default
 					},
-					keySeparator: false,
 					nsSeparator: false,
-					debug: true
 				},
 			},
 		},
@@ -58,17 +66,17 @@ module.exports = {
 			resolve: `gatsby-plugin-react-svg`,
 			options: {
 				rule: {
-					include: /.+\.svg$/
-				}
-			}
+					include: /.+\.svg$/,
+				},
+			},
 		},
 		`gatsby-plugin-fontawesome-css`,
 		`gatsby-transformer-json`,
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
-				path: `${__dirname}/src/songs`,
-				ignore: [`${__dirname}/src/songs/song.json`],
+				path: `${__dirname}/songs`,
+				ignore: [`${__dirname}/songs/song.json`],
 			},
 		},
 		// this (optional) plugin enables Progressive Web App + Offline functionality

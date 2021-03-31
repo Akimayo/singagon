@@ -3,7 +3,7 @@
 	"$id": "https://webapps.mciesla.cz/singagon/song.json",
 	"type": "object",
 	"title": "Song",
-	"description": "The song object",
+	"description": "This file defines a song with lyrics for the Singagon app.",
 	"default": {},
 	"required": ["name", "available", "artists", "lyrics"],
 	"properties": {
@@ -11,7 +11,7 @@
 			"$id": "#/properties/name",
 			"type": "string",
 			"title": "Song Name",
-			"description": "The name/title of the song",
+			"description": "The name/title of the song. Is used for display. Please avoid featured artists in the name, rather add them in the Artists section.",
 			"default": ""
 		},
 		"available": {
@@ -27,7 +27,7 @@
 						"$id": "#/properties/available/items/anyOf/0",
 						"type": "object",
 						"title": "Platform",
-						"description": "A link to the song on a platform",
+						"description": "A link to the song on a platform.",
 						"default": {},
 						"required": ["on", "link"],
 						"properties": {
@@ -35,15 +35,16 @@
 								"$id": "#/properties/available/items/anyOf/0/properties/on",
 								"type": "string",
 								"title": "Platform",
-								"description": "The name of the platform",
-								"default": ""
+								"description": "The name of the platform. Currently supported are \"YouTube\" (also used for thumbnails), \"Spotify\" and \"Apple Music\". Required.",
+								"default": "YouTube",
+								"pattern": "(YouTube|Spotify|Apple Music)"
 							},
 							"link": {
 								"$id": "#/properties/available/items/anyOf/0/properties/link",
 								"type": "string",
 								"title": "Link",
-								"description": "URL of the song for this platform",
-								"default": ""
+								"description": "URL of the song for this platform. Required.",
+								"default": "https://youtu.be/"
 							}
 						},
 						"additionalProperties": true
@@ -55,7 +56,7 @@
 			"$id": "#/properties/artists",
 			"type": "array",
 			"title": "Artists",
-			"description": "List of artists in this song",
+			"description": "List of artists featured in or producing this song. Used for display and lyrics.",
 			"default": [],
 			"additionalItems": true,
 			"items": {
@@ -65,7 +66,7 @@
 						"$id": "#/properties/artists/items/anyOf/0",
 						"type": "object",
 						"title": "Artist",
-						"description": "Details of an artist",
+						"description": "Details of an artist. Artists who do not sing this song only need a \"Name\", the ones who sing also need to have their \"Voices\" and \"Color\" set.",
 						"default": {},
 						"required": ["name"],
 						"properties": {
@@ -73,14 +74,14 @@
 								"$id": "#/properties/artists/items/anyOf/0/properties/name",
 								"type": "string",
 								"title": "Name",
-								"description": "Artist's name or pseudonym",
+								"description": "Artist's name or pseudonym. Required.",
 								"default": ""
 							},
 							"voices": {
 								"$id": "#/properties/artists/items/anyOf/0/properties/voices",
 								"type": "array",
 								"title": "Voices",
-								"description": "Array of indices in lyrics subarrays to be associated with this artist",
+								"description": "Array of indices in lyrics subarrays to be associated with this artist. The first index in this array signifies the main voice, the rest are used as background vocals or voice effects. Required for artists who sing in this song.",
 								"default": [],
 								"items": {
 									"$id": "#/properties/artists/items/anyOf/0/properties/voices/items"
@@ -90,14 +91,14 @@
 								"$id": "#/properties/artists/items/anyOf/0/properties/link",
 								"type": "string",
 								"title": "Link",
-								"description": "A link to the artist's social media profile or website",
+								"description": "A link to the artist's social media profile or website. This helps users quickly find the artist on social media, so either the link to their music or most used social media profile should be provided.",
 								"default": ""
 							},
 							"photo": {
 								"$id": "#/properties/artists/items/anyOf/1/properties/photo",
 								"type": "string",
 								"title": "Photo",
-								"description": "File name (without extension) of the artist's photo in the /src/images/artists directory. This photo should be a partrait picture stripped of background and must be in PNG file format.",
+								"description": "File name (without extension) of the artist's photo in the /artists directory. Do not directly link photos from external sites and make sure the licence allows modified redistribution of the photo. This photo should be a portrait picture stripped of background and must be in PNG or WEBP file format. Required for artists who sing in this song.",
 								"default": "",
 								"pattern": "^[^\/:\\]+$"
 							},
@@ -105,7 +106,7 @@
 								"$id": "#/properties/artists/items/anyOf/1/properties/photo",
 								"type": "string",
 								"title": "Color",
-								"description": "Accent color for this artist",
+								"description": "Accent color for this artist. Used for effects and to tell apart which artist sings what. Make sure the colors are different enough to not confuse the user. Required for artists who sing this song.",
 								"default": "#ffffff",
 								"pattern": "#[0-9a-fA-F]{6}"
 							}
@@ -118,7 +119,7 @@
 			"$id": "#/properties/lyrics",
 			"type": "array",
 			"title": "Lyrics",
-			"description": "List of the song lines",
+			"description": "List of the song lines. Required.",
 			"default": [],
 			"minItems": 1,
 			"items": {
@@ -127,9 +128,10 @@
 					{
 						"$id": "#/properties/lyrics/items/anyOf/0",
 						"type": "array",
-						"title": "Lyric line",
-						"description": "A line sung in the song",
+						"title": "Lyrics line",
+						"description": "A line sung in the song. Every voice has its own text (even when they are the same) and the index of the voice is linked to the \"Voices\" property of artists. When an artist is not singing the line, use the \"null\" value to keep indices and array length consistent thoughout the song. At least one is required.",
 						"default": [],
+						"minItems": 1,
 						"items": {
 							"$id": "#/properties/lyrics/items/anyOf/0/items",
 							"anyOf": [
@@ -137,14 +139,14 @@
 									"$id": "#/properties/lyrics/items/anyOf/0/items/anyOf/0",
 									"type": "string",
 									"title": "Sung line",
-									"description": "The artists sings this line",
+									"description": "The artists sings this line. Use \"...\" at the beginning of a line to delay it (ex. one artists sings the whole line and another sings only the last words).",
 									"default": ""
 								},
 								{
 									"$id": "#/properties/lyrics/items/anyOf/0/items/anyOf/1",
 									"type": "null",
 									"title": "Unsung line",
-									"description": "The artist is silent during this line",
+									"description": "The artist is silent during this line.",
 									"default": null
 								}
 							]

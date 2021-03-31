@@ -1,7 +1,12 @@
 import { graphql } from "gatsby";
-import { Link } from "gatsby-plugin-react-i18next";
-import React, { useCallback, useEffect, useState } from "react";
-import ReactP5 from "react-p5-wrapper";
+import { Link, useTranslation } from "gatsby-plugin-react-i18next";
+import React, {
+	useCallback,
+	useEffect,
+	useMemo,
+	useRef,
+	useState,
+} from "react";
 import {
 	faYoutube as IconYouTube,
 	faSoundcloud as IconSoundCloud,
@@ -17,9 +22,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../styles/main.scss";
 import Header from "../header";
 import SEO from "../seo";
-import sketch from "./background";
+import sketchFactory from "./background";
 import SongList from "../song-list";
 import { GatsbyImage } from "gatsby-plugin-image";
+import p5 from "p5";
 
 interface Song {
 	name: string;
@@ -43,6 +49,7 @@ const icons = {
 	"Apple Music": IconAppleMusic,
 };
 export default ({ data }) => {
+	const { t } = useTranslation();
 	/** @var photos: All photos retrieved from artists folder as a dictionary with filenames as keys */
 	const photos = new Map<string, any>();
 	data.allFile.edges.forEach(e =>
@@ -60,7 +67,7 @@ export default ({ data }) => {
 	const lines = [
 		...Array(padTop).fill(spacer),
 		...song.lyrics,
-		spacer.map((_, i) => (i < vocalists.length ? "END" : null)),
+		spacer.map((_, i) => (i < vocalists.length ? t("sing.end") : null)),
 	].map(l =>
 		vocalists.map(a => ({
 			main: l[a.voices[0]],
@@ -110,6 +117,16 @@ export default ({ data }) => {
 		document.addEventListener("wheel", moveByScroll);
 		return () => document.removeEventListener("wheel", moveByScroll);
 	}, [moveByScroll]);
+	const canvasRef = useRef<HTMLDivElement>();
+	const sketchRef = useRef<p5>();
+	const sketch = useMemo(
+		() => sketchFactory(vocalists.map(v => v.color || "#fff")),
+		[vocalists]
+	);
+	useEffect(() => {
+		sketchRef.current = new p5(sketch, canvasRef.current);
+		return () => sketchRef.current.remove();
+	}, [canvasRef]);
 	return (
 		<>
 			<SEO
@@ -117,23 +134,25 @@ export default ({ data }) => {
 			/>
 			<Header
 				siteTitle={song.name}
-				mini={song.artists.map(a => (
-					<Link to={a.link} target="_blank" className="s-header__artist-link">
+				mini={song.artists.map((a, i) => (
+					<Link
+						to={a.link}
+						target="_blank"
+						className="s-header__artist-link"
+						key={i}
+					>
 						{a.name}
 					</Link>
 				))}
 			/>
-			<div className="s-song">
-				<ReactP5
-					sketch={sketch}
-					colors={song.artists.filter(a => a.color).map(a => a.color)}
-				/>
+			<div className="s-song" ref={canvasRef}>
 				<main className="s-song__lyrics">
 					{lines.map((l, i) => {
 						const relPos = i - lineOffset - padTop;
 						let lineClass = "off-bottom";
 						let active = false;
 						const next = relPos === 1;
+						const startsWithDelay = new RegExp("^\\.{3}");
 						if (relPos === 4) lineClass = "ready-bottom";
 						else if (relPos === -3) lineClass = "ready-top";
 						else if (relPos < -3) lineClass = "off-top";
@@ -141,7 +160,8 @@ export default ({ data }) => {
 							lineClass = "active";
 							active = true;
 						} else if (relPos <= 3 && relPos >= -2) lineClass = "";
-						const sameMain = l.every(t => t.main === l[0].main);
+						const sameMain =
+							vocalists.length > 1 && l.every(t => t.main === l[0].main);
 						if (sameMain) {
 							const sameSubs = l.every(
 								s => s.sub && s.sub.every((d, n) => l[0].sub[n] === d)
@@ -193,6 +213,8 @@ export default ({ data }) => {
 												textShadow: `0 0 ${
 													active ? "64px" : next ? "8px" : 0
 												} ${t.color}`,
+												transitionDelay:
+													active && startsWithDelay.test(t.main) && "480ms",
 											}}
 										>
 											{t.main || <>&nbsp;</>}
@@ -220,6 +242,13 @@ export default ({ data }) => {
 						inSong
 						select={2}
 						className={lineOffset < lines.length - padTop ? "off-bottom" : ""}
+						randomizeCallback={() =>
+							Math.random() *
+							data.file.name.split("").reduce(function (a, b) {
+								a = (a << 5) - a + b.charCodeAt(0);
+								return a & a;
+							}, 0)
+						}
 						filterCallback={s => s.node.name !== data.file.name}
 					/>
 				</main>
@@ -228,9 +257,12 @@ export default ({ data }) => {
 						onClick={() => setLineOffset(0)}
 						className="s-song__controls-button"
 						disabled={lineOffset <= 0}
+						title={t("sing.reset")}
 					>
 						<FontAwesomeIcon icon={faRedoAlt} />
-						<span className="s-song__controls-button-tooltip">Reset</span>
+						<span className="s-song__controls-button-tooltip">
+							{t("sing.reset")}
+						</span>
 					</button>
 					{song.available.map((l, i) => (
 						<Link
@@ -238,6 +270,7 @@ export default ({ data }) => {
 							target="_blank"
 							key={i}
 							className="s-song__controls-button"
+							title={l.on}
 						>
 							<FontAwesomeIcon icon={icons[l.on] || faExternalLinkAlt} />
 							<span className="s-song__controls-button-tooltip">
@@ -292,7 +325,7 @@ export default ({ data }) => {
 	);
 };
 export const query = graphql`
-	query($name: String!) {
+	query($name: String!, $language: String!) {
 		file(name: { eq: $name }) {
 			childSongsJson {
 				name
@@ -312,7 +345,7 @@ export const query = graphql`
 			name
 		}
 		allFile(
-			filter: { ext: { eq: ".png" }, dir: { glob: "**/images/artists" } }
+			filter: { ext: { in: [ ".png", ".webp" ] }, dir: { glob: "**/artists" } }
 		) {
 			edges {
 				node {
@@ -324,6 +357,15 @@ export const query = graphql`
 							formats: [WEBP, PNG]
 						)
 					}
+				}
+			}
+		}
+		locales: allLocale(filter: { language: { eq: $language } }) {
+			edges {
+				node {
+					ns
+					data
+					language
 				}
 			}
 		}

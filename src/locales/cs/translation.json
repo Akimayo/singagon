@@ -1,0 +1,28 @@
+{
+	"app-sub-title": "Všechny hlasy {{appName}}u",
+	"app-description": "",
+	"app-by": "S {{note}} v uších vytvořil",
+	"app-built-with": "Postaveno na platformě",
+	"nav": {
+		"sing": "Zpívat",
+		"about": "O aplikaci",
+		"contribute": "Přidat",
+		"locales": "Přepnout jazyk"
+	},
+	"pages": {
+		"index": {},
+		"sing": {},
+		"about": {},
+		"404": {}
+	},
+	"songs": {
+		"all": "Písničky",
+		"selected": "Vybrané kousky",
+		"search": "Hledat...",
+		"not-found": "Žádné dostupné písně neodpovídají hledanému výrazu"
+	},
+	"sing": {
+		"end": "Konec",
+		"reset": "Začátek"
+	}
+}

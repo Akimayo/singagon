@@ -1,0 +1,66 @@
+{
+	"$schema": "./song.json",
+	"name": "Getaway",
+	"available": [
+		{
+			"on": "Spotify",
+			"link": "https://open.spotify.com/track/6GObGZs7C3TL74ypZoqPO5?si=zrpr3PxgRgO4_56aqMz0Xw"
+		},
+        {
+            "on": "YouTube",
+            "link": "https://youtu.be/T5kWT2B_3n0"
+        }
+	],
+    "artists": [
+        {
+            "name": "Last Heroes",
+            "link": "https://twitter.com/LastHeroesmusic"
+        },
+        {
+            "name": "Lunis",
+            "color": "#DBF177",
+            "voices": [0,1],
+            "photo": "lunis-lead",
+            "link": "https://open.spotify.com/artist/1YjaVTeHBlVRRxbk7H30HN?si=erdBHe21S5ujlwLwfGtW9A"
+        }
+    ],
+    "lyrics": [
+        ["Every \"sorry\", every \"baby\"", null],
+        ["Makes me crazy", null],
+        ["As I try not to think of you", null],
+        ["Not to think of you", null],
+        ["Our story ended badly", null],
+        ["I feel empty and I won't tell you where I am", null],
+        ["Tell you where I am", null],
+        ["If you miss me, if you're lonely", null],
+        ["Just don't call me", null],
+        ["'Cause I'm not ever coming back", null],
+        ["I'm not coming back", null],
+        ["You know I, you know I pray-ay", null],
+        ["You will see that I'm okay-ay", null],
+        ["You'll fade away, fade away-ay", null],
+        ["Fade away, fade away, hey-ay", null],
+        ["Why do you, why do you play-ay", null],
+        ["If you just, if you just stay-ay", null],
+        ["I'll get away, get away-ay", null],
+        ["Get away, get away-ay", null],
+        ["Get away, get away, hey", null],
+        [null, null],
+        ["Get away, get away, hey", null],
+        [null, null],
+        ["Get away, get away, stay", "...don't stay"],
+        [null, null],
+        ["I'm all done now and I won't bow", null],
+        ["I guess somehow you were not meant to be around", null],
+        ["Meant to be around", null],
+        ["You know I, you know I pray-ay", null],
+        ["You will see that I'm okay-ay", null],
+        ["'Cause I've gone away, gone away-ay", null],
+        ["Gone away, gone away, hey-ay", null],
+        ["Get away, get away, hey", null],
+        [null, null],
+        ["Get away, get away, hey", null],
+        [null, null],
+        ["Get away, get away, stay", "...don't stay"]
+    ]
+}

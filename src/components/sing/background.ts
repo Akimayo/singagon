@@ -1,9 +1,10 @@
 import p5, { Color, Vector } from "p5";
 
-export default (
-	p: p5 & { myCustomRedrawAccordingToNewPropsHandler: (props: any) => void }
-) => {
-	let colors: Color[] = [p.color(255, 127)],
+export default (artistColors: string[]) => (p: p5) => {
+	let colors: Color[] =
+			artistColors && artistColors.length
+				? artistColors.map(c => p.color(c))
+				: [p.color(255, 127)],
 		move: Vector = p.createVector(0, 0),
 		vel: Vector = p.createVector(0, 0),
 		acc: Vector = p.createVector(0, 0);
@@ -47,8 +48,5 @@ export default (
 				p.circle(x * spacing - wh, y * spacing - hh, radius + 8 + 32 * sdeg);
 			}
 		}
-	};
-	p.myCustomRedrawAccordingToNewPropsHandler = ({ colors: c }) => {
-		c && c.length && (colors = c.map(n => p.color(n)));
 	};
 };
