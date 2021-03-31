@@ -86,7 +86,7 @@ const SongList: React.FC<SongListProps> = ({
 						v.length < 1
 							? data
 							: data.filter(e =>
-									v.split(/[^\w\d]+/).every(t => e.node.name.includes(t))
+									v.toLowerCase().split(/[^\w\d]+/).every(t => e.node.name.includes(t))
 							  )
 					)
 				)

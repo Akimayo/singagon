@@ -19,6 +19,7 @@ h6 {
 }
 body {
 	background-color: $white;
+	margin: unset;
 }
 .s-header {
 	background-color: $red;
@@ -64,7 +65,7 @@ body {
 			text-align: center;
 			&:not(.s-header__artist-link) {
 				margin: 0 8px;
-				padding: 4px 8px;
+				padding: 8px 8px;
 				display: inline-block;
 				width: 120px;
 				&:hover,
@@ -82,10 +83,7 @@ body {
 						display: block;
 						position: absolute;
 						right: 24px;
-						top: 4px;
-						@media (max-width: 480px) {
-							top: 8px;
-						}
+						top: 8px;
 					}
 				}
 			}
@@ -147,7 +145,7 @@ body {
 		align-items: flex-start;
 		justify-content: space-between;
 		overflow-y: hidden;
-		height: 44px;
+		height: 36px;
 		transition: height ease-out 120ms;
 		&.active {
 			height: 180px;
@@ -221,7 +219,7 @@ body {
 				letter-spacing: 0px;
 				text-align: center;
 				margin: 0 8px;
-				padding: 4px 16px;
+				padding: 8px 16px;
 				display: inline-block;
 				color: $white;
 				text-decoration: none;
@@ -242,7 +240,7 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 	min-height: calc(100vh - 72px - 32px);
-	padding: 0 24px;
+	padding: 12px 24px 48px;
 }
 .s-footer {
 	background-color: fade-out($teal, 0.3);
@@ -503,7 +501,6 @@ body {
 			transition: border-color 120ms ease-out, color 120ms ease-out 60ms;
 			text-decoration: none;
 			text-align: center;
-			padding: 10px 0;
 			&:disabled {
 				$dw: darken($white, 80);
 				color: $dw;
@@ -533,6 +530,9 @@ body {
 					opacity: 1;
 				}
 			}
+		}
+		a.s-song__controls-button svg {
+			padding: 12px 0;
 		}
 		&::before {
 			content: "";
@@ -567,7 +567,7 @@ body {
 	}
 	.s-songcard__title {
 		margin-top: 24px;
-		font-size: 1.4rem;
+		font-size: 24px;
 	}
 	.s-songcard__title,
 	.s-songcard__subtitle {
