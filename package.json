@@ -10,7 +10,6 @@
     "@fortawesome/react-fontawesome": "^0.1.14",
     "gatsby": "^3.1.1",
     "gatsby-plugin-fontawesome-css": "^1.1.0",
-    "gatsby-plugin-gatsby-cloud": "^2.1.0",
     "gatsby-plugin-image": "^1.1.2",
     "gatsby-plugin-manifest": "^3.1.0",
     "gatsby-plugin-offline": "^4.1.0",
@@ -29,7 +28,6 @@
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-i18next": "^11.8.11",
-    "react-p5-wrapper": "^2.4.0",
     "react-svg-loader": "^3.0.3",
     "sass": "^1.32.8"
   },
@@ -37,7 +35,7 @@
     "prettier": "2.2.1"
   },
   "keywords": [
-    "gatsby"
+    "gatsby", "music", "lyrics"
   ],
   "license": "0BSD",
   "scripts": {
@@ -51,9 +49,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/Akimayo/singagon"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/Akimayo/singagon/issues"
   }
 }
